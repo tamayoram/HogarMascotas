@@ -34,7 +34,9 @@ class RegisterController extends BaseController
 		try{
 
 			$animalModel->insert($data);
-			echo("Success");
+			$message="El animal se agregó de forma exitosa";
+			return redirect()->to(base_url("public/Registroanimales"))->with('Message Registry',$message);
+			
 
 		}catch(\Exception $error){
 
@@ -73,6 +75,8 @@ class RegisterController extends BaseController
 		try{
 
 			$animalModel->where('id',$id)->delete();
+			$messageDelete="El animal fue eliminado de la base de datos";
+			return redirect()->to(base_url("public/Listadoanimales"))->with('Message Delete',$messageDelete);
 
 			
 
@@ -105,7 +109,8 @@ class RegisterController extends BaseController
 		try{
 
 			$animalModel->update($id,$data);
-			echo("Updated");
+			$messageEdit="La información del animal fue actualizada";
+			return redirect()->to(base_url("public/Listadoanimales"))->with('Message Edit',$messageEdit);
 
 		}catch(\Exception $error){
 

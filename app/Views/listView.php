@@ -1,5 +1,28 @@
 <?php include_once('header.php'); ?>
 
+    <?php if(session('Message Delete')):?>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php echo(session('Message Delete'))?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <?php endif ?>
+
+
+    <?php if(session('Message Edit')):?>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php echo(session('Message Edit'))?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <?php endif ?>
+    
 
 <div class="row row-cols-1 row-cols-md-3 mt-4">
 
@@ -50,33 +73,7 @@
                                         <label>Edad:</label>
                                         <input type="text" class="form-control" value="<?php echo ($animal["age"]) ?>" name="ageEdit">
                                     </div>
-                                <!--
-                                    <div class="form-group">
-                                        <label>Tipo:</label>
-                                        <select name="typeEdit" class="form-control">
-                                            <option>
-
-                                                <?php
-                                                    if ($animal["type"] == 0) {
-                                                        echo ("Doméstico");
-                                                    } else {
-                                                        echo ("Fauna Silvestre");
-                                                    }
-                                                ?>
-                                            
-                                            </option>
-                                            <option>
-                                                <?php
-                                                    if ($animal["type"] == 0) {
-                                                        echo ("Fauna Silvestre");
-                                                    } else {
-                                                        echo ("Doméstico");
-                                                    }
-                                                ?>
-                                            </option>
-                                        </select>
-                                    </div> -->
-
+                               
                                     <div class="form-group">
                                         <label>Descripcion:</label>
                                             <textarea class="form-control" rows="3" name="descriptionEdit"><?php echo ($animal["description"]) ?></textarea>

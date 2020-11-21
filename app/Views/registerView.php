@@ -1,5 +1,15 @@
 <?php include_once('header.php'); ?>
 
+    <?php if(session('Message Registry')):?>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php echo(session('Message Registry'))?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <?php endif ?>
 
 
 <form class="mt-4" action="<?php echo(base_url("public/Registroanimales/guardar/")) ?>" method="POST">
